@@ -30,3 +30,7 @@ npx parcel index.html --https
 # run app production:
 
 npx parcel build index.html
+
+# how jsx works
+
+JSX => React.createElement => Object => HTML(DOM)
