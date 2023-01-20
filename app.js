@@ -12,7 +12,7 @@ const heading = React.createElement(
 );
 const heading2 = React.createElement("h2", {}, "React Intro");
 
-//JSX
+//JSX react element
 const heading3 = <h3>heading 3</h3>;
 
 const cont = React.createElement(
@@ -24,5 +24,36 @@ const cont = React.createElement(
   [heading, heading2, heading3]
 );
 
+//React componenets
+//function components - NEW WAY
+// Class components - OLD WAY
+
+const LogoComponent = () => {
+  return (
+    <div>
+      <span>LOGO</span>
+    </div>
+  );
+};
+
+let message = "Welcome";
+
+//component composition
+const HeaderComponent = () => {
+  return (
+    <div>
+      {LogoComponent()}
+      {message}
+      {console.log(message)}
+      <LogoComponent />
+      {cont}
+      <ul>
+        <li>Home</li>
+      </ul>
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(cont);
+root.render(<HeaderComponent />);

@@ -2911,7 +2911,7 @@ const heading = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
     key: "h1k"
 }, "Hello World");
 const heading2 = /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {}, "React Intro");
-//JSX
+//JSX react element
 const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
     children: "heading 3"
 }, void 0, false, {
@@ -2927,8 +2927,70 @@ const cont = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
     heading2,
     heading3
 ]);
+//React componenets
+//function components - NEW WAY
+// Class components - OLD WAY
+const LogoComponent = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+            children: "LOGO"
+        }, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 23,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 22,
+        columnNumber: 10
+    }, undefined);
+};
+_c = LogoComponent;
+let message = "Welcome";
+//component composition
+const HeaderComponent = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            LogoComponent(),
+            message,
+            console.log(message),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(LogoComponent, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 34,
+                columnNumber: 7
+            }, undefined),
+            cont,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    children: "Home"
+                }, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 37,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 36,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 30,
+        columnNumber: 10
+    }, undefined);
+};
+_c1 = HeaderComponent;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(cont);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
+    fileName: "app.js",
+    lineNumber: 43,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "LogoComponent");
+$RefreshReg$(_c1, "HeaderComponent");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {
